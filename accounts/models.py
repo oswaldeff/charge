@@ -16,4 +16,4 @@ class ServiceUser(TimeStampedModel):
         verbose_name_plural = '서비스 유저들'
     
     def __str__(self):
-        return f'{self.user}'
+        return f'{self.user.id}'

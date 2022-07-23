@@ -11,17 +11,17 @@ class Station(TimeStampedModel):
     battery_type = models.CharField(
         max_length=100,
         choices=(
-            ('LITHIUM-ION', '리튬이온 배터리'),
-            ('NICKEL-METAL', '니켈메탈 배터리'),
+            ('lithium-ion', '리튬이온 배터리'),
+            ('nickel-metal', '니켈메탈 배터리'),
         ),
         verbose_name='배터리 타입'
     )
     state = models.CharField(
         max_length=100,
         choices=(
-            ('USEABLE', '사용가능'),
-            ('OCCUPIED', '사용중'),
-            ('UNUSEABLE', '사용불가능'),
+            ('useable', '사용가능'),
+            ('occupied', '사용중'),
+            ('unuseable', '사용불가능'),
         ),
         verbose_name='상태'
     )
@@ -36,7 +36,7 @@ class Station(TimeStampedModel):
         verbose_name_plural = '충전소들'
     
     def __str__(self):
-        return f'{self.id}, {self.name}'
+        return f'{self.id}'
 
 
 class ChargeHistory(TimeStampedModel):
@@ -53,4 +53,4 @@ class ChargeHistory(TimeStampedModel):
         verbose_name_plural = '충전 기록들'
     
     def __str__(self):
-        return f'{self.id}, {self.station}, {self.service_user}'
+        return f'{self.id}'

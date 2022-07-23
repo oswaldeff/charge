@@ -34,8 +34,8 @@ def gen_db():
     if not station:
         Station.objects.create(
             name='강남 역삼2동주민센터 전기차충전소',
-            battery_type='LITHIUM-ION',
-            state='USEABLE',
+            battery_type='lithium-ion',
+            state='useable',
             address='서울 강남구 도곡로43길 25',
             lat='37.4958939',
             lng='127.046844',
@@ -44,7 +44,7 @@ def gen_db():
     coupon_category = CouponCategory.objects.first()
     if not coupon_category:
         coupon_category = CouponCategory.objects.create(
-            label='SIGNUP',
+            label='signup',
             code=hex(int(datetime.now().strftime('%Y%m%d')))
         )
         coupon = Coupon.objects.create(

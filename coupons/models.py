@@ -11,8 +11,8 @@ class CouponCategory(TimeStampedModel):
     label = models.CharField(
         max_length=100,
         choices=(
-            ('SIGNUP', '회원가입발급'),
-            ('EVENT', '이벤트발급'),
+            ('signup', '회원가입발급'),
+            ('event', '이벤트발급'),
         ),
         verbose_name='라벨'
     )
@@ -24,7 +24,7 @@ class CouponCategory(TimeStampedModel):
         verbose_name_plural = '쿠폰 카테고리들'
     
     def __str__(self):
-        return f'{self.code}'
+        return f'{self.id}'
 
 
 class Coupon(TimeStampedModel):
@@ -41,7 +41,7 @@ class Coupon(TimeStampedModel):
         verbose_name_plural = '쿠폰들'
     
     def __str__(self):
-        return f'{self.coupon_category}{self.code}'
+        return f'{self.id}'
 
 
 class CouponHistory(TimeStampedModel):
@@ -56,4 +56,4 @@ class CouponHistory(TimeStampedModel):
         verbose_name_plural = '쿠폰 기록들'
     
     def __str__(self):
-        return f'{self.id}, {self.coupon}, {self.service_user}'
+        return f'{self.id}'
