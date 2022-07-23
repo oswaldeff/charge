@@ -33,7 +33,6 @@ class Coupon(TimeStampedModel):
     code = models.CharField(max_length=100, verbose_name='코드')
     name = models.CharField(max_length=100, verbose_name='이름')
     point = models.PositiveBigIntegerField(verbose_name='포인트')
-    expired_at = models.DateTimeField()
     is_delete = models.BooleanField(default=False, verbose_name='삭제')
     
     class Meta:

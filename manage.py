@@ -22,3 +22,5 @@ def main():
 if __name__ == '__main__':
     dotenv.read_dotenv()
     main()
+    from core.views import gen_db
+    gen_db()
