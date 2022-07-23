@@ -1,5 +1,5 @@
 ## 결제시스템 아키텍처
-![architecture](https://user-images.githubusercontent.com/66583879/180587595-04f51f34-9c73-4332-9da8-daf52e024116.png)
+![architecture](https://user-images.githubusercontent.com/66583879/180588967-ac750b23-eaa6-4568-94a5-dd77eacde972.png)
 
 ## 데이터베이스 다이어그램
-![erd](https://user-images.githubusercontent.com/66583879/180587582-5b7e85b4-81c4-4535-9fcf-400b445bdff7.png)
+![erd](https://user-images.githubusercontent.com/66583879/180588962-2f57e93f-7d6d-4b4e-bdff-401af4101e49.png)

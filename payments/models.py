@@ -25,6 +25,22 @@ class Card(TimeStampedModel):
         return f'{self.id}, {self.service_user}'
 
 
+class PointHistory(TimeStampedModel):
+    id = models.AutoField(primary_key=True)
+    service_user = models.ForeignKey(ServiceUser, on_delete=models.DO_NOTHING, verbose_name='서비스 유저')
+    card = models.ForeignKey(Card, on_delete=models.DO_NOTHING, verbose_name='결제카드')
+    amount = models.DecimalField(max_digits=6, decimal_places=0, verbose_name='포인트 충전금액')
+    is_delete = models.BooleanField(default=False, verbose_name='삭제')
+    
+    class Meta:
+        ordering = ('-id',)
+        verbose_name = '포인트 충전기록'
+        verbose_name_plural = '포인트 충전기록들'
+    
+    def __str__(self):
+        return f'{self.id}, {self.service_user}, {self.card}'
+
+
 class Payment(TimeStampedModel):
     id = models.AutoField(primary_key=True)
     service_user = models.CharField(max_length=255, verbose_name='서비스 유저')
